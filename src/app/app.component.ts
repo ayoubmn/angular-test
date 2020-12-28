@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './service/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,10 +12,18 @@ export class AppComponent {
   title = 'inpt-cloud-mamgas';
   email: string;
   password: string;
+  data = '';
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private _httpClient: HttpClient) {
     this.email = '';
     this.password = '';
+    this.getData();
+  }
+
+  getData(){
+    return this._httpClient.get("https://us-central1-cours-tp.cloudfunctions.net/helloWorld").subscribe(dataFirestore => {
+      console.log("data", dataFirestore);
+    });
   }
 
   signup() {
