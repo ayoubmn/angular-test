@@ -24,4 +24,4 @@ test:
       - node_modules
     policy: pull
   script:
-    - ng test --progress false --watch false
+    - npm ng test --progress false --watch false
