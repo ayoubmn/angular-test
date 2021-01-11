@@ -16,7 +16,7 @@ dependencies:
 
 test:
   stage: test
-  image: node:12-alpine
+  image: trion/ng-cli-karma
   allow_failure: true
   cache:
     key: ${CI_COMMIT_REF_SLUG}
