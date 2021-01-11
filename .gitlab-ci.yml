@@ -6,9 +6,3 @@ dependencies:
   image: node:12-alpine
   script:
     - yarn install
-  cache:
-    key:
-      files:
-        - yarn.lock
-    paths:
-      - node_modules
