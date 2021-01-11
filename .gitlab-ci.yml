@@ -1,8 +1,14 @@
 stages :
-  - stage_a
+  - install
 
-job_1:
-  stage: stage_a
+dependencies:
+  stage: install
   image: node:12-alpine
   script:
-    - node --version
+    - yarn install
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - node_modules
