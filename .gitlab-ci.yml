@@ -1,16 +1,15 @@
 stages :
   - install
   - test
+  - deploy
 
+variables:
+  HEROKU_AUTH_TOKEN: ${HEROKU_AUTH_TOKEN}
+  HEROKU_APP_NAME: cloud-tp-naruto
 
 dependencies:
   stage: install
   image: node:12-alpine
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - node_modules
-    policy: pull
   script:
     - npm install
 
@@ -21,3 +20,12 @@ test:
   script:
     - npm install
     - ng test --progress false --watch false
+
+
+deploy:
+  stage: deploy
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_AUTH_TOKEN
