@@ -1,15 +1,28 @@
 stages :
   - install
+  - test
+
 
 dependencies:
   stage: install
   image: node:12-alpine
   cache:
     key:
-      files:
-        - yarn.lock
+      files: ${CI_COMMIT_REF_SLUG}
     paths:
       - node_modules
     policy: pull
   script:
     - npm install
+
+test:
+  stage: test
+  image: node:12-alpine
+  cache:
+    key:
+      files: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+    policy: pull
+  script:
+    - ng test --progress false --watch false
