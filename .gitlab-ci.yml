@@ -7,8 +7,7 @@ dependencies:
   stage: install
   image: node:12-alpine
   cache:
-    key:
-      files: ${CI_COMMIT_REF_SLUG}
+    key: ${CI_COMMIT_REF_SLUG}
     paths:
       - node_modules
     policy: pull
@@ -18,9 +17,9 @@ dependencies:
 test:
   stage: test
   image: node:12-alpine
+  allow_failure: true
   cache:
-    key:
-      files: ${CI_COMMIT_REF_SLUG}
+    key: ${CI_COMMIT_REF_SLUG}
     paths:
       - node_modules
     policy: pull
