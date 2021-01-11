@@ -5,4 +5,4 @@ dependencies:
   stage: install
   image: node:12-alpine
   script:
-    - yarn install
+    - npm install
