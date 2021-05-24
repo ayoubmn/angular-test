@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   constructor(public authService: AuthService, private _httpClient: HttpClient) {
     this.email = '';
     this.password = '';
+    console.log('It works here');
 
     
   }

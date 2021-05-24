@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase : {
-    apiKey: 'AIzaSyDdm0h6EtwMcgIkYGNjaWzJ_jluxSzz6_M',
-    authDomain: 'cours-tp.firebaseapp.com',
-    projectId: 'cours-tp',
-    storageBucket: 'cours-tp.appspot.com',
-    messagingSenderId: '954543312031',
-    appId: '1:954543312031:web:c36d681fbbc7c46fd166aa'
+    apiKey: "AIzaSyClZHMsGvLeWCvvYhcWyNtiNbHh6lFKhFs",
+    authDomain: "cours-tp-eb004.firebaseapp.com",
+    projectId: "cours-tp-eb004",
+    storageBucket: "cours-tp-eb004.appspot.com",
+    messagingSenderId: "31646812353",
+    appId: "1:31646812353:web:6f28bdb7b265e801ba2c40"
   }
 };
