@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(public authService: AuthService, private _httpClient: HttpClient) {
     this.email = '';
     this.password = '';
-    console.log('It works here');
+    console.log('It works');
 
     
   }
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
   getData(){
     console.log("before call API");
-    
+    //j'utilise lien du repo original puisque je peut pas configurer un nouveau
     return this._httpClient.get("http://us-central1-cours-tp.cloudfunctions.net/helloWorld/").subscribe(dataFirestore => {
       console.log("data", dataFirestore);
       this.data = dataFirestore;
